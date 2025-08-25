@@ -1,0 +1,76 @@
+/* Ensure your navbar is fixed and body has margin-top (should be set globally) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Scope all newinfo page styles */
+.newinfo-page {
+  margin-top: 4rem; /* to clear fixed navbar height */
+}
+
+/* Center the form container */
+.newinfo-page .main-form-area {
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* White box form container with shadow */
+.newinfo-page .form-container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Heading */
+.newinfo-page h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Form layout */
+.newinfo-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.newinfo-page label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+/* Inputs and select */
+.newinfo-page .mb-3 input,
+.newinfo-page select.form-control {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+.newinfo-page .newInfo-btn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newinfo-page .newInfo-btn:hover {
+  background-color: #0056b3;
+}

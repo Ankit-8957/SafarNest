@@ -1,0 +1,70 @@
+.no-bootstrap {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 40px 10%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.no-bootstrap * {
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #0077b6;
+}
+
+.social-icons a {
+  font-size: 20px;
+  margin-right: 15px;
+  color: #0077b6;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #023e8a;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+}

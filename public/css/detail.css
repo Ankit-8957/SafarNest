@@ -1,0 +1,205 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.info {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: auto;
+}
+
+.info__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #333;
+}
+
+.info__meta p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.info__location i {
+  color: #ff5a5f;
+  margin-right: 6px;
+}
+
+.info__price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.info__description {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.back-btn,
+.edit-btn {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.back-btn {
+  background: #007bff;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.back-btn:hover {
+  background: #0056b3;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #3e8e41;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.delete-form {
+  display: inline;
+}
+
+.delete-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #d62828;
+}
+
+.review-form-container {
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.review-form-container:hover {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.styled-input,
+.styled-select,
+.styled-textarea {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.styled-input:focus,
+.styled-select:focus,
+.styled-textarea:focus {
+  border-color: #495057;
+  box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
+}
+
+.btn-dark {
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .info h1 {
+    font-size: 1.8rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .review-form-container {
+    margin: 30px 15px;
+    padding: 15px;
+  }
+}
+
+
+
+
+.review-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.no-reviews {
+  font-size: 1rem;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-left: 4px solid #ccc;
+}
+
+
+.star-rating i {
+  font-size: 1rem;
+  margin-left: 2px;
+}
+.review-card .btn-outline-danger {
+  white-space: nowrap;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+}

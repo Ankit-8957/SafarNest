@@ -1,0 +1,18 @@
+body {
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+}
+.card {
+  background-color: #fff;
+  border: none;
+}
+
+.flash-alert {
+  position: fixed;
+  top: 90px; /* Adjust if your navbar is taller or shorter */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1055; /* Bootstrap's modals use z-index 1050, so this stays on top */
+  width: 90%;
+  max-width: 600px;
+  padding: 15px;
+}

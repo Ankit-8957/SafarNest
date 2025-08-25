@@ -1,0 +1,100 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin-top: 4rem;
+}
+
+.contact-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.contact-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fefefe;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.submit-btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-container h1 {
+    font-size: 2.2rem;
+  }
+}
+
+.btn-close{
+  margin: 0;
+}
+.flash-msg {
+  max-width: 700px;
+  width: 90%;
+  margin: 20px auto;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

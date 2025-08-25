@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/edit.css" />
+</head>
+
+<body>
+  <div class="edit-container">
+    <h2>Edit Listing Details</h2>
+
+    <form action="/listing/<%= Listing._id %>?_method=PUT" method="POST" class="needs-validation" novalidate
+      enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" class="form-control" id="title" name="Listing[title]" value="<%= Listing.title %>" required>
+        <div class="invalid-feedback">Title is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <input type="text" class="form-control" id="description" name="Listing[description]"
+          value="<%= Listing.description %>" required>
+        <div class="invalid-feedback">Description is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" class="form-control" id="price" name="Listing[price]" value="<%= Listing.price %>"
+          required>
+        <div class="invalid-feedback">Price is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" class="form-control" id="location" name="Listing[location]" value="<%= Listing.location %>"
+          required>
+        <div class="invalid-feedback">Location is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="country" class="form-label">Country:</label>
+        <input type="text" class="form-control" id="country" name="Listing[country]" value="<%= Listing.country %>"
+          required>
+        <div class="invalid-feedback">Country is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image:</label>
+        <input type="file" class="form-control" id="image" name="Listing[image]" value="<%= Listing.image.url %>">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="category">Category</label>
+        <select name="Listing[category]" id="category" class="form-control" required>
+          <option disabled selected value="">-- Select Category --</option>
+          <option>Hotel</option>
+          <option>Resort</option>
+          <option>Villa</option>
+          <option>Apartment</option>
+          <option>Hostel</option>
+          <option>Cabin</option>
+          <option>Cottage</option>
+          <option>Farmhouse</option>
+          <option>Tent</option>
+          <option>Camping</option>
+          <option>Treehouse</option>
+          <option>Guesthouse</option>
+          <option>Homestay</option>
+          <option>Beach House</option>
+          <option>Mountain Stay</option>
+          <option>Boat</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Update Listing</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

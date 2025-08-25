@@ -1,0 +1,61 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #f44336, #e57373);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Error container */
+.error-container {
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Error code */
+.error-container h1 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.error-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.error-container p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Button */
+.btn {
+  padding: 12px 20px;
+  background-color: #fff;
+  color: #f44336;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #fdd;
+  color: #c62828;
+}
