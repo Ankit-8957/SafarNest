@@ -100,7 +100,6 @@ module.exports.search = async (req, res) => {
         req.flash("error","List not found !!");
         return res.redirect("/listing");
     }
-    console.log(allList);
     res.render("./listing/index.ejs", { allList });
 }
 
