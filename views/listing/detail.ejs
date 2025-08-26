@@ -9,142 +9,144 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <% layout('./layout/boilerplate') -%>
-<% if (error && error.length > 0) { %>
-  <div class="container mt-3">
-    <% error.forEach(err => { %>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <%= err %>
+  <% if (error && error.length> 0) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= error %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    <% }) %>
-  </div>
-<% } %>
-
-<% if (success && success.length > 0) { %>
-  <div class="container mt-3">
-    <% success.forEach(msg => { %>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <%= msg %>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-    <% }) %>
-  </div>
-<% } %>
-
-  <body style="padding-top: 4.5rem">
-
-    <div class="container">
-      <div class="image-section">
-        <img src="<%=details.image.url%>" alt="<%=details.image.filename%>">
-      </div>
-
-    <div class="info">
-  <h1 class="info__title"><%= details.title %></h1>
-
-  <div class="info__meta">
-    <p class="info__owner"><strong>Host:</strong> <%= details.owner.username %></p>
-    <p class="info__category"><strong>Category:</strong> <%= details.category %></p>
-    <p class="info__location">
-      <i class="fas fa-map-marker-alt"></i>
-      <%= details.location %>, <%= details.country %>
-    </p>
-    <p class="info__price">
-      <strong>Price:</strong> ₹<%= details.price.toLocaleString("en-IN") %> / night
-    </p>
-  </div>
-
-  <p class="info__description"><%= details.description %></p>
-</div>
-
-
-     
-      <form action="/listing/<%= details._id %>?_method=DELETE" method="POST" class="delete-form">
-        <button type="submit" class="delete-btn">Delete</button>
-      </form>
-
-      <a href="/listing/<%= details._id %>/edit" class="edit-btn">Edit</a>
-      
-      <a href="/listing" class="back-btn">← Back to Listings</a>
-    </div>
-
-    <% if(currUser){ %>
-    <div class="review-form-container shadow p-4 rounded">
-      <h4 class="mb-4">Leave a Review</h4>
-      <form action="/listing/<%= details._id %>/reviews" method="POST">
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" class="form-control styled-input" id="name" name="Review[name]" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="rating" class="form-label">Rating</label>
-          <select class="form-select styled-select" id="rating" name="Review[rating]" required>
-            <option value="" disabled selected>Select rating</option>
-            <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
-            <option value="4">⭐⭐⭐⭐ - Good</option>
-            <option value="3">⭐⭐⭐ - Average</option>
-            <option value="2">⭐⭐ - Poor</option>
-            <option value="1">⭐ - Terrible</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label for="comment" class="form-label">Your Review</label>
-          <textarea class="form-control styled-textarea" id="comment" name="Review[comment]" rows="4"
-            required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-dark w-100">Submit Review</button>
-      </form>
     </div>
     <% } %>
 
-    <div class="container mt-5">
-      <h2 class="mb-4 text-primary">User Reviews</h2>
-
-      <!-- If there are no reviews -->
-      <%if(details.reviews.length===0){%>
-        <div class="no-reviews text-muted fst-italic">
-          No reviews yet. Be the first to write one!
+      <% if (success && success.length> 0) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <%}else{%>
-          <!-- Reviews List -->
-          <% for(let review of details.reviews){ %>
-            <div class="review-list mt-4">
-              <div
-                class="review-card p-3 mb-3 shadow-sm rounded border d-flex justify-content-between align-items-start flex-wrap"
-                style="background-color: #f9f9f9;">
+        <% } %>
 
-                <!-- Left Side: Review Content -->
-                <div class="review-content" style="flex: 1 1 auto; min-width: 200px;">
-                  <p class="mb-1 review-text">"<%= review.comment %>"</p>
-                  <div class="star-rating mb-2">
-                    <% for(let i=1; i <=5; i++) { %>
-                      <% if(i <=review.rating) { %>
-                        <i class="fa-solid fa-star text-warning"></i>
-                        <% } else { %>
-                          <i class="fa-regular fa-star text-warning"></i>
-                          <% } %>
-                            <% } %>
-                  </div>
-                  <small class="text-muted">— <%= review.name %></small>
+          <body style="padding-top: 4.5rem">
+
+            <div class="container">
+              <div class="image-section">
+                <img src="<%=details.image.url%>" alt="<%=details.image.filename%>">
+              </div>
+
+              <div class="info">
+                <h1 class="info__title">
+                  <%= details.title %>
+                </h1>
+
+                <div class="info__meta">
+                  <p class="info__owner"><strong>Host:</strong>
+                    <%= details.owner.username %>
+                  </p>
+                  <p class="info__category"><strong>Category:</strong>
+                    <%= details.category %>
+                  </p>
+                  <p class="info__location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <%= details.location %>, <%= details.country %>
+                  </p>
+                  <p class="info__price">
+                    <strong>Price:</strong> ₹<%= details.price.toLocaleString("en-IN") %> / night
+                  </p>
                 </div>
 
-                <% if(currUser && currUser._id.equals(review.Author._id)){%>
-                <form action="/listing/<%= details._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST"
-                  style="margin-left: 15px;">
-                  <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
-                </form>
-                <% } %>
+                <p class="info__description">
+                  <%= details.description %>
+                </p>
               </div>
-            </div>
-            <% } %>
 
+
+              <%if(currUser && currUser._id.equals(details.owner._id)){%>
+                <form action="/listing/<%= details._id %>?_method=DELETE" method="POST" class="delete-form">
+                  <button type="submit" class="delete-btn">Delete</button>
+                </form>
+
+                <a href="/listing/<%= details._id %>/edit" class="edit-btn">Edit</a>
+                <% }%>
+
+
+                  <a href="/listing" class="back-btn">← Back to Listings</a>
+            </div>
+
+            <% if(currUser){ %>
+              <div class="review-form-container shadow p-4 rounded">
+                <h4 class="mb-4">Leave a Review</h4>
+                <form action="/listing/<%= details._id %>/reviews" method="POST">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control styled-input" id="name" name="Review[name]" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <select class="form-select styled-select" id="rating" name="Review[rating]" required>
+                      <option value="" disabled selected>Select rating</option>
+                      <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                      <option value="4">⭐⭐⭐⭐ - Good</option>
+                      <option value="3">⭐⭐⭐ - Average</option>
+                      <option value="2">⭐⭐ - Poor</option>
+                      <option value="1">⭐ - Terrible</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="comment" class="form-label">Your Review</label>
+                    <textarea class="form-control styled-textarea" id="comment" name="Review[comment]" rows="4"
+                      required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-dark w-100">Submit Review</button>
+                </form>
+              </div>
               <% } %>
 
+                <div class="container mt-5">
+                  <h2 class="mb-4 text-primary">User Reviews</h2>
 
-    </div>
+                  <!-- If there are no reviews -->
+                  <%if(details.reviews.length===0){%>
+                    <div class="no-reviews text-muted fst-italic">
+                      No reviews yet. Be the first to write one!
+                    </div>
+                    <%}else{%>
+                      <!-- Reviews List -->
+                      <% for(let review of details.reviews){ %>
+                        <div class="review-list mt-4">
+                          <div
+                            class="review-card p-3 mb-3 shadow-sm rounded border d-flex justify-content-between align-items-start flex-wrap"
+                            style="background-color: #f9f9f9;">
 
-  </body>
+                            <!-- Left Side: Review Content -->
+                            <div class="review-content" style="flex: 1 1 auto; min-width: 200px;">
+                              <p class="mb-1 review-text">"<%= review.comment %>"</p>
+                              <div class="star-rating mb-2">
+                                <% for(let i=1; i <=5; i++) { %>
+                                  <% if(i <=review.rating) { %>
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                    <% } else { %>
+                                      <i class="fa-regular fa-star text-warning"></i>
+                                      <% } %>
+                                        <% } %>
+                              </div>
+                              <small class="text-muted">— <%= review.name %></small>
+                            </div>
+
+                            <% if(currUser && currUser._id.equals(review.Author._id)){%>
+                              <form action="/listing/<%= details._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                method="POST" style="margin-left: 15px;">
+                                <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+                              </form>
+                              <% } %>
+                          </div>
+                        </div>
+                        <% } %>
+
+                          <% } %>
+
+
+                </div>
+
+          </body>
 
 </html>
