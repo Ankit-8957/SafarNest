@@ -38,7 +38,9 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dbUrl,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true,});
 }
 
 const store = MongoStore.create({
@@ -46,10 +48,10 @@ const store = MongoStore.create({
     crypto: {
         secret: process.env.SECRET,
     },
-    touchAfter: 24*3600,
+    touchAfter: 24 * 3600,
 })
-store.on("error", ()=>{
-    console.log("Error in Mongo Session store" , err);    
+store.on("error", () => {
+    console.log("Error in Mongo Session store", err);
 });
 app.use(session({
     store: store,
@@ -84,8 +86,8 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-app.get("/",(req,res)=>{
-    res.render("/listing/home.ejs");
+app.get("/", (req, res) => {
+    res.render("listing/home.ejs");
 })
 app.use("/listing", ListingRouter);
 app.use("/listing/:id/reviews", ReviewsRouter)
