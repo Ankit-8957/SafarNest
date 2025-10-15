@@ -72,7 +72,6 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 // Set EJS as the view engine
 app.set("view engine", "ejs");
-
 // Set views directory
 app.set("views", path.join(__dirname, "views"));
 // Serve static files from 'public' directory
@@ -85,7 +84,9 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-
+app.get("/",(req,res)=>{
+    res.render("/listing/home.ejs");
+})
 app.use("/listing", ListingRouter);
 app.use("/listing/:id/reviews", ReviewsRouter)
 app.use("/", userRouter)

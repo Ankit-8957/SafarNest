@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safarnest - Travel Made Easy</title>
+    
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Safarnest</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Travel, Simplified</h1>
+            <p>Find the best stays, experiences, and adventures — all in one place.</p>
+            <a href="#features">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="feature">
+            <img src="https://img.icons8.com/ios-filled/100/0077b6/map.png" alt="Explore">
+            <h3>Explore Anywhere</h3>
+            <p>Safarnest helps you discover unique stays and experiences worldwide.</p>
+        </div>
+        <div class="feature">
+            <img src="https://img.icons8.com/ios-filled/100/0077b6/clock.png" alt="Instant Booking">
+            <h3>Instant Booking</h3>
+            <p>Book your stays instantly with real-time availability and secure payments.</p>
+        </div>
+        <div class="feature">
+            <img src="https://img.icons8.com/ios-filled/100/0077b6/star.png" alt="Trusted Stays">
+            <h3>Trusted Stays</h3>
+            <p>All properties are verified to ensure a safe and enjoyable stay for you.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Safarnest</h2>
+        <p>Safarnest is your ultimate travel companion. We simplify the process of finding the perfect place to stay,
+            exploring new destinations, and planning memorable experiences. With a focus on reliability, convenience,
+            and user experience, Safarnest ensures your travel planning is effortless and enjoyable.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Users Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial">
+                <p>"Safarnest made my trip planning effortless! I found amazing stays instantly."</p>
+                <h4>- Riya K.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The interface is super easy to use, and the listings are trustworthy."</p>
+                <h4>- Aman P.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I love the real-time availability feature. Booking was so fast and smooth!"</p>
+                <h4>- Priya S.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta">
+        <h2>Start Your Journey Today!</h2>
+        <a href="#contact">Get Started</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <input type="email" name="user_email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Safarnest. All Rights Reserved.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+   // Initialize EmailJS
+   (function(){
+       emailjs.init("WPbs_d9unEkEULgxn"); // Replace with your EmailJS public key
+   })();
+</script>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            emailjs.sendForm('service_bkvl03g', 'template_j5h9wn5', this)
+                .then(function () {
+                    alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
+                }, function (error) {
+                    alert('Failed to send message. Please try again.', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>
