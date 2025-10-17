@@ -31,7 +31,7 @@ app.engine('ejs', ejsMate);
 
 // Use method override with query parameter ?_method=PUT or ?_method=DELETE
 app.use(methodOverride('_method'));
-const dbUrl = "mongodb://127.0.0.1:27017/wanderlust"
+const dbUrl = process.env.db_URL;
 //setup connection of mongoose
 main()
     .then(res => { console.log("Database is connected") })
