@@ -19,9 +19,7 @@ router.get("/search", wrapAsync(listingController.search));
 router.get("/filter",wrapAsync(listingController.filter));
 //About section
 router.get("/about", listingController.about);
-//contact section
-router.get("/contact", listingController.contact);
-router.post("/contact", isLoggedIn, validateContact, listingController.contactPost);
+
 //create new information
 router.get("/new", isLoggedIn, listingController.createNewInfo);
 

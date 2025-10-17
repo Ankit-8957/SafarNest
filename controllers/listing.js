@@ -65,23 +65,7 @@ module.exports.about = (req,res)=>{
     res.render("listing/about.ejs");        
 }
 
-module.exports.contact = (req,res)=>{
-    req.flash("success", " hii you in ");
-    res.render("listing/contact.ejs");
-}
 
-module.exports.contactPost = async(req,res)=>{
-    try {
-        let list = {...req.body.contact};
-        await sendMail(list);        
-        req.flash("success","Thanks for report !");
-        res.redirect("/listing/contact");
-    } catch (e) {
-        console.log("Error is : ",e);
-        req.flash("error","Something went wrong !!");
-        res.redirect("/listing/contact");
-    }
-}
 
 module.exports.search = async (req, res) => {
     let search = req.query.query;

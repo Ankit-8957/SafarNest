@@ -1,3 +1,4 @@
+/* ====== Global Styles ====== */
 * {
     margin: 0;
     padding: 0;
@@ -16,36 +17,139 @@ a {
     color: inherit;
 }
 
-/* Header */
-header {
-    background: #fff;
+/* ===== Navbar Section ===== */
+.navbar {
+    width: 100%;
+    padding: 20px 10%;
+    background: #ffffff;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    justify-content: space-between;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 
-header .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #0077b6;
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0078ff;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
 
-header nav a {
-    margin-left: 25px;
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a {
+    color: #333;
     font-weight: 500;
-    transition: color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-header nav a:hover {
-    color: #0077b6;
+.nav-links li a:hover {
+    color: #0078ff;
 }
 
-/* Hero Section */
+/* Get Started Button */
+.get-started-btn {
+    background: #0078ff;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 120, 255, 0.3);
+    margin-left: 100px;
+}
+
+.get-started-btn:hover {
+    background: #005fcc;
+    box-shadow: 0 6px 15px rgba(0, 120, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+/* ===== Hamburger Menu ===== */
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    color: #0078ff;
+    cursor: pointer;
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 7%;
+    }
+
+    /* Make Get Started button appear under menu links on mobile */
+    .get-started-btn {
+        width: 100%;
+        /* full width under links */
+        text-align: center;
+        margin: 2px 0 0 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #fff;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 6px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: dropdown 0.4s ease forwards;
+        max-height: 450px;
+    }
+
+    @keyframes dropdown {
+        from {
+            opacity: 0;
+            transform: translateY(-15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+
+    .get-started-btn {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 0 0;
+    }
+}
+
+/* ===== Hero Section ===== */
 .hero {
     background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
     height: 90vh;
@@ -71,6 +175,7 @@ header nav a:hover {
     position: relative;
     z-index: 1;
     max-width: 800px;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
@@ -96,7 +201,23 @@ header nav a:hover {
     background-color: #e14e53;
 }
 
-/* Features Section */
+/* Responsive Hero */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .hero-content a {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Features Section ===== */
 .features {
     max-width: 1200px;
     margin: 60px auto;
@@ -135,7 +256,7 @@ header nav a:hover {
     color: #555;
 }
 
-/* About Section */
+/* ===== About Section ===== */
 .about {
     background-color: #0077b6;
     color: #fff;
@@ -155,72 +276,64 @@ header nav a:hover {
     line-height: 1.6;
 }
 
-/* Testimonials Section */
-.testimonials {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+/* ===== Our Services ===== */
+.services {
+    padding: 80px 10%;
+    background: #f9fafb;
     text-align: center;
 }
 
-.testimonials h2 {
-    font-size: 36px;
-    color: #0077b6;
-    margin-bottom: 40px;
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.testimonial-cards {
+.section-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.service-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-.testimonial {
-    background-color: #fff;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    font-style: italic;
+.service-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
-.testimonial p {
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-box i {
+    font-size: 2.5rem;
+    color: #0078ff;
     margin-bottom: 15px;
 }
 
-.testimonial h4 {
-    font-size: 16px;
-    color: #0077b6;
-    font-weight: bold;
+.service-box h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin-bottom: 10px;
 }
 
-/* Call-to-Action Section */
-.cta {
-    background-color: #0077b6;
-    color: #fff;
-    text-align: center;
-    padding: 80px 20px;
+.service-box p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.cta h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.cta a {
-    background-color: #fff;
-    color: #0077b6;
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: background 0.3s, color 0.3s;
-}
-
-.cta a:hover {
-    background-color: #e1e1e1;
-    color: #0077b6;
-}
-
-/* Contact Section */
+/* ===== Contact Section ===== */
 .contact {
     max-width: 1200px;
     margin: 60px auto;
@@ -262,24 +375,50 @@ header nav a:hover {
 }
 
 .contact button:hover {
-    background-color: #0077b6;
+    background-color: #005fcc;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
     text-align: center;
     padding: 30px 20px;
     background-color: #fff;
     border-top: 1px solid #eee;
     color: #666;
+    font-size: 0.9rem;
 }
 
-@media(max-width: 768px) {
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 6%;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     .hero-content p {
+        font-size: 16px;
+    }
+
+    .feature h3 {
         font-size: 18px;
+    }
+
+    .about h2 {
+        font-size: 28px;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }

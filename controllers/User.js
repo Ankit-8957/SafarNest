@@ -19,7 +19,7 @@ module.exports.signup = async (req, res) => {
         
     } catch (e) {
         req.flash("error", e.message);
-        res.redirect("/signup");
+        res.redirect("/user/signup");
         console.log(e);
     }
 }
@@ -41,6 +41,6 @@ module.exports.logout = (req,res,next)=>{
             return next(err);
         }
         req.flash("success","Now you are logged out");
-        res.redirect("/listing");
+        res.redirect("/");
     });
 }

@@ -31,16 +31,14 @@ app.engine('ejs', ejsMate);
 
 // Use method override with query parameter ?_method=PUT or ?_method=DELETE
 app.use(methodOverride('_method'));
-const dbUrl = process.env.db_URL;
+const dbUrl = "mongodb://127.0.0.1:27017/wanderlust"
 //setup connection of mongoose
 main()
     .then(res => { console.log("Database is connected") })
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(dbUrl,{
-        useNewUrlParser: true,
-        useUnifiedTopology: true,});
+    await mongoose.connect(dbUrl);
 }
 
 const store = MongoStore.create({
@@ -91,7 +89,7 @@ app.get("/", (req, res) => {
 })
 app.use("/listing", ListingRouter);
 app.use("/listing/:id/reviews", ReviewsRouter)
-app.use("/", userRouter)
+app.use("/user", userRouter)
 
 //express error handling
 app.all(/.*/, (req, res, next) => {

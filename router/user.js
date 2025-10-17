@@ -12,7 +12,7 @@ router.post("/signup", wrapAsync(UserController.signup));
 
 //login page
 router.get("/login",UserController.login);
-router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedirect: '/login' , failureFlash: true}),UserController.renderLogin);
+router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedirect: '/user/login' , failureFlash: true}),UserController.renderLogin);
 //logout
 router.get("/logout",UserController.logout);
 

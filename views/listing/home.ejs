@@ -5,28 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safarnest - Travel Made Easy</title>
-    
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="logo">Safarnest</div>
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">SafarNest</div>
+
+        <!-- Hamburger icon (for mobile) -->
+        <div class="menu-icon" id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <a href="/user/login" class="get-started-btn">Get Started</a>
+        </ul>
+
+    </nav>
+
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Your Travel, Simplified</h1>
             <p>Find the best stays, experiences, and adventures — all in one place.</p>
-            <a href="#features">Discover More</a>
+            <a href="/user/login">Discover More</a>
         </div>
     </section>
 
@@ -57,30 +68,43 @@
             and user experience, Safarnest ensures your travel planning is effortless and enjoyable.</p>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <h2>What Users Say</h2>
-        <div class="testimonial-cards">
-            <div class="testimonial">
-                <p>"Safarnest made my trip planning effortless! I found amazing stays instantly."</p>
-                <h4>- Riya K.</h4>
+    <!-- Our Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Making your journey easier, smoother, and unforgettable.</p>
+
+        <div class="service-container">
+            <div class="service-box">
+                <i class="fa-solid fa-route"></i>
+                <h3>Personalized Trip Planning</h3>
+                <p>We craft tailor-made travel plans that fit your schedule, budget, and preferences for a seamless
+                    adventure.</p>
             </div>
-            <div class="testimonial">
-                <p>"The interface is super easy to use, and the listings are trustworthy."</p>
-                <h4>- Aman P.</h4>
+
+            <div class="service-box">
+                <i class="fa-solid fa-hotel"></i>
+                <h3>Hotel & Stay Booking</h3>
+                <p>Find and book cozy, affordable stays with ease through our trusted network of accommodations.</p>
             </div>
-            <div class="testimonial">
-                <p>"I love the real-time availability feature. Booking was so fast and smooth!"</p>
-                <h4>- Priya S.</h4>
+
+            <div class="service-box">
+                <i class="fa-solid fa-bus"></i>
+                <h3>Transportation Assistance</h3>
+                <p>Get complete transport guidance — from public routes to private cabs — ensuring hassle-free movement.
+                </p>
+            </div>
+
+            <div class="service-box">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Travel Support</h3>
+                <p>Our dedicated team is available round the clock to resolve issues and keep your journey worry-free.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section class="cta">
-        <h2>Start Your Journey Today!</h2>
-        <a href="#contact">Get Started</a>
-    </section>
+
+
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -99,12 +123,12 @@
         &copy; 2025 Safarnest. All Rights Reserved.
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-   // Initialize EmailJS
-   (function(){
-       emailjs.init("WPbs_d9unEkEULgxn"); // Replace with your EmailJS public key
-   })();
-</script>
+    <script>
+        // Initialize EmailJS
+        (function () {
+            emailjs.init("WPbs_d9unEkEULgxn"); // Replace with your EmailJS public key
+        })();
+    </script>
 
     <script>
         document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -119,6 +143,20 @@
                 });
         });
     </script>
+    <script>
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
+
+  menuIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    // Toggle between bars and X icon
+    const icon = menuIcon.querySelector("i");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-xmark");
+  });
+</script>
+
 
 </body>
 
